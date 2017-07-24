@@ -13,30 +13,29 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class ScreenBrightnessPackage implements ReactPackage {
-  private final int mWriteSettingsRequestCode;
-
-  public ScreenBrightnessPackage(final int writeSettingsRequestCode) {
-    mWriteSettingsRequestCode = writeSettingsRequestCode;
+public class ScreenBrightnessPackage implements ReactPackage
+{
+  public ScreenBrightnessPackage()
+  {
   }
 
   @Override
-  public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
+  public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext)
+  {
     List<NativeModule> modules = new ArrayList<NativeModule>();
-    modules.add(new ScreenBrightnessModule(
-            reactApplicationContext,
-            mWriteSettingsRequestCode
-    ));
+    modules.add(new ScreenBrightnessModule(reactApplicationContext));
     return modules;
   }
 
   @Override
-  public List<Class<? extends JavaScriptModule>> createJSModules() {
+  public List<Class<? extends JavaScriptModule>> createJSModules()
+  {
     return Collections.emptyList();
   }
 
   @Override
-  public List<ViewManager> createViewManagers(ReactApplicationContext reactApplicationContext) {
+  public List<ViewManager> createViewManagers(ReactApplicationContext reactApplicationContext)
+  {
     return Arrays.<ViewManager>asList();
   }
 }
