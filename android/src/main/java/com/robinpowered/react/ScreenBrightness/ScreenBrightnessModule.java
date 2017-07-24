@@ -261,4 +261,8 @@ public class ScreenBrightnessModule extends ReactContextBaseJavaModule
     public void setBrightness(float brightness, final Promise promise) {
         setSystemBrightness(brightness, promise);
     }
+    
+    @Override protected void onNewIntent(Intent intent) { 
+   		super.onNewIntent(intent);
+  	}
 }
